@@ -1,13 +1,14 @@
 <script>
 export default {
   name: "OptionComponent4",
+  //watch은 특정 상태를 감시하고, 상태가 변경될 때마다 특정 동작을 수행
   watch: {
     inputTxt: function () {
-      const pos = this.inputTxt.indexOf(this.forbiddenTxt);
-
+      const pos = this.inputTxt.indexOf(this.forbiddenTxt); // indexOf로 특정 문자열의 첫번째 위치 반환, 없으면 -1
+      console.log(pos);
       if (pos >= 0) {
         alert(this.forbiddenTxt + "입력 불가");
-        this.inputTxt = this.inputTxt.substring(0, pos);
+        this.inputTxt = this.inputTxt.substring(0, pos); // 0번부터 pos값 직전까지 출력(바보는 출력 안됨)
       }
     },
   },
